@@ -2164,6 +2164,8 @@
 
     invoke-direct {v0, v1}, Lio/flutter/embedding/engine/FlutterEngine;-><init>(Landroid/content/Context;)V
 
+    invoke-static {v0}, Lio/flutter/plugins/GeneratedPluginRegistrant;->registerWith(Lio/flutter/embedding/engine/FlutterEngine;)V
+
     invoke-direct {p0, v0}, Lcn/yoozworld/watch/ui/BLfLst;->createMethodChannel(Lio/flutter/embedding/engine/FlutterEngine;)Lio/flutter/plugin/common/MethodChannel;
 
     return-void

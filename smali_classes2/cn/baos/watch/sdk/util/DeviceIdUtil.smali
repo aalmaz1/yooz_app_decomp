@@ -6,21 +6,120 @@
 # direct methods
 .method public constructor <init>()V
     .locals 0
+
     .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     return-void
 .end method
 
 .method public static byteToHex(B)Ljava/lang/String;
-    .locals 1
-    const-string v0, ""
-    return-object v0
+    .locals 3
+
+    .line 102
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    and-int/lit16 p0, p0, 0xff
+
+    .line 104
+    invoke-static {p0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 105
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_0
+
+    const-string v1, "0"
+
+    .line 106
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 108
+    :cond_0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 109
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object v0, Ljava/util/Locale;->CHINA:Ljava/util/Locale;
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public static bytesToHex([B)Ljava/lang/String;
-    .locals 1
-    const-string v0, ""
-    return-object v0
+    .locals 5
+
+    .line 88
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/4 v1, 0x0
+
+    .line 90
+    :goto_0
+    array-length v2, p0
+
+    if-ge v1, v2, :cond_1
+
+    .line 91
+    aget-byte v2, p0, v1
+
+    and-int/lit16 v2, v2, 0xff
+
+    invoke-static {v2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 92
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    const/4 v4, 0x1
+
+    if-ne v3, v4, :cond_0
+
+    const-string v3, "0"
+
+    .line 93
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 95
+    :cond_0
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 97
+    :cond_1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object v0, Ljava/util/Locale;->CHINA:Ljava/util/Locale;
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method private static getAndroidId(Landroid/content/Context;)Ljava/lang/String;
@@ -42,16 +141,79 @@
 .end method
 
 .method private static getHashByString(Ljava/lang/String;)[B
-    .locals 1
-    const/4 v0, 0x0
-    new-array v0, v0, [B
-    return-object v0
+    .locals 2
+
+    :try_start_0
+    const-string v0, "SHA1"
+
+    .line 120
+    invoke-static {v0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+
+    move-result-object v0
+
+    .line 121
+    invoke-virtual {v0}, Ljava/security/MessageDigest;->reset()V
+
+    const-string v1, "UTF-8"
+
+    .line 122
+    invoke-virtual {p0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/security/MessageDigest;->update([B)V
+
+    .line 123
+    invoke-virtual {v0}, Ljava/security/MessageDigest;->digest()[B
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    const-string p0, ""
+
+    .line 125
+    invoke-virtual {p0}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method private static getIMEI(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
-    const-string v0, "yooz_private_id"
-    return-object v0
+
+    :try_start_0
+    const-string v0, "phone"
+
+    .line 185
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/telephony/TelephonyManager;
+
+    .line 186
+    invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    .line 188
+    invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
+
+    const-string p0, ""
+
+    return-object p0
 .end method
 
 .method private static getSerial()Ljava/lang/String;
@@ -74,18 +236,133 @@
 
 .method public static getUniqueID(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
-    const-string v0, "yooz_private_id"
-    return-object v0
+
+    .line 211
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object p0
+
+    const-string v0, "android_id"
+
+    invoke-static {p0, v0}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 212
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, "9774d56d682e549c"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 213
+    sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/UUID;->nameUUIDFromBytes([B)Ljava/util/UUID;
+
+    move-result-object p0
+
+    .line 214
+    invoke-virtual {p0}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 217
+    :goto_0
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 218
+    invoke-static {}, Lcn/baos/watch/sdk/util/DeviceIdUtil;->getUUID()Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 221
+    :cond_1
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    :cond_2
+    return-object p0
 .end method
 
 .method public static hexToByte(Ljava/lang/String;)B
     .locals 1
-    const/4 v0, 0x0
-    return v0
+
+    const/16 v0, 0x10
+
+    .line 264
+    invoke-static {p0, v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
+
+    move-result p0
+
+    int-to-byte p0, p0
+
+    return p0
 .end method
 
 .method public static uuid()Ljava/lang/String;
-    .locals 1
-    const-string v0, "yooz_private_uuid_gen"
-    return-object v0
+    .locals 4
+
+    .line 75
+    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
+
+    move-result-object v0
+
+    .line 76
+    invoke-virtual {v0}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 77
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "----->UUID"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, "debug"
+
+    invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v1
 .end method

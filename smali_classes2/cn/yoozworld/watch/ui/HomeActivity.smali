@@ -949,6 +949,8 @@
     .line 182
     invoke-super {p0, p1}, Lio/flutter/embedding/android/FlutterActivity;->configureFlutterEngine(Lio/flutter/embedding/engine/FlutterEngine;)V
 
+    invoke-static {p1}, Lio/flutter/plugins/GeneratedPluginRegistrant;->registerWith(Lio/flutter/embedding/engine/FlutterEngine;)V
+
     .line 183
     new-instance v0, Lio/flutter/plugin/common/MethodChannel;
 
@@ -1299,21 +1301,21 @@
     invoke-direct {p1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     .line 92
-    new-instance v0, Lcn/yoozworld/watch/ui/HomeActivity$$ExternalSyntheticLambda5;
+#    new-instance v0, Lcn/yoozworld/watch/ui/HomeActivity$$ExternalSyntheticLambda5;
 
-    invoke-direct {v0, p0}, Lcn/yoozworld/watch/ui/HomeActivity$$ExternalSyntheticLambda5;-><init>(Lcn/yoozworld/watch/ui/HomeActivity;)V
+#    invoke-direct {v0, p0}, Lcn/yoozworld/watch/ui/HomeActivity$$ExternalSyntheticLambda5;-><init>(Lcn/yoozworld/watch/ui/HomeActivity;)V
 
-    const-wide/16 v1, 0x4e20
+#    const-wide/16 v1, 0x4e20
 
-    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+#    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 95
-    new-instance p1, Lcn/baos/watch/sdk/util/LogcatThread;
+#    new-instance p1, Lcn/baos/watch/sdk/util/LogcatThread;
 
-    invoke-direct {p1, p0}, Lcn/baos/watch/sdk/util/LogcatThread;-><init>(Landroid/content/Context;)V
+#    invoke-direct {p1, p0}, Lcn/baos/watch/sdk/util/LogcatThread;-><init>(Landroid/content/Context;)V
 
     .line 96
-    invoke-virtual {p1}, Lcn/baos/watch/sdk/util/LogcatThread;->startThread()V
+#    invoke-virtual {p1}, Lcn/baos/watch/sdk/util/LogcatThread;->startThread()V
 
     .line 97
     invoke-static {p0}, Lcn/yoozworld/watch/utils/WorldUtils;->getWorldTime(Landroid/content/Context;)Ljava/lang/String;

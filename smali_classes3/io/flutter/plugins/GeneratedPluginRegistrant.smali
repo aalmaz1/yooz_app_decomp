@@ -34,7 +34,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
@@ -59,7 +59,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
     goto :goto_1
 
@@ -84,7 +84,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
 
     goto :goto_2
 
@@ -109,7 +109,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
+    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_3
 
     goto :goto_3
 
@@ -134,7 +134,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
+    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_4
 
     goto :goto_4
 
@@ -159,7 +159,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_5
+    .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_5
 
     goto :goto_5
 
@@ -184,7 +184,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_6
+    .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_6
 
     goto :goto_6
 
@@ -209,7 +209,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_7
+    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_7
 
     goto :goto_7
 
@@ -234,7 +234,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_8
+    .catch Ljava/lang/Throwable; {:try_start_8 .. :try_end_8} :catch_8
 
     goto :goto_8
 
@@ -259,7 +259,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_9
+    .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_9
 
     goto :goto_9
 
@@ -284,7 +284,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_a
+    .catch Ljava/lang/Throwable; {:try_start_a .. :try_end_a} :catch_a
 
     goto :goto_a
 
@@ -309,7 +309,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_b
-    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_b
+    .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_b} :catch_b
 
     goto :goto_b
 
@@ -334,7 +334,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_c
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_c
+    .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_c} :catch_c
 
     goto :goto_c
 
@@ -359,7 +359,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_d
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_d
+    .catch Ljava/lang/Throwable; {:try_start_d .. :try_end_d} :catch_d
 
     goto :goto_d
 
@@ -384,7 +384,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_e
+    .catch Ljava/lang/Throwable; {:try_start_e .. :try_end_e} :catch_e
 
     goto :goto_e
 
@@ -409,7 +409,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_f
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_f} :catch_f
+    .catch Ljava/lang/Throwable; {:try_start_f .. :try_end_f} :catch_f
 
     goto :goto_f
 
@@ -434,7 +434,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_10
+    .catch Ljava/lang/Throwable; {:try_start_10 .. :try_end_10} :catch_10
 
     goto :goto_10
 
@@ -459,7 +459,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_11
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_11} :catch_11
+    .catch Ljava/lang/Throwable; {:try_start_11 .. :try_end_11} :catch_11
 
     goto :goto_11
 
@@ -484,7 +484,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_12
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_12} :catch_12
+    .catch Ljava/lang/Throwable; {:try_start_12 .. :try_end_12} :catch_12
 
     goto :goto_12
 
@@ -509,7 +509,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_13
-    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_13} :catch_13
+    .catch Ljava/lang/Throwable; {:try_start_13 .. :try_end_13} :catch_13
 
     goto :goto_13
 
@@ -534,7 +534,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_14
-    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_14
+    .catch Ljava/lang/Throwable; {:try_start_14 .. :try_end_14} :catch_14
 
     goto :goto_14
 
@@ -559,7 +559,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_15
-    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_15} :catch_15
+    .catch Ljava/lang/Throwable; {:try_start_15 .. :try_end_15} :catch_15
 
     goto :goto_15
 
@@ -584,7 +584,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_16
-    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_16} :catch_16
+    .catch Ljava/lang/Throwable; {:try_start_16 .. :try_end_16} :catch_16
 
     goto :goto_16
 
@@ -609,7 +609,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_17
-    .catch Ljava/lang/Exception; {:try_start_17 .. :try_end_17} :catch_17
+    .catch Ljava/lang/Throwable; {:try_start_17 .. :try_end_17} :catch_17
 
     goto :goto_17
 
@@ -634,7 +634,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_18 .. :try_end_18} :catch_18
+    .catch Ljava/lang/Throwable; {:try_start_18 .. :try_end_18} :catch_18
 
     goto :goto_18
 
@@ -659,7 +659,7 @@
 
     invoke-interface {v1, v2}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_19} :catch_19
+    .catch Ljava/lang/Throwable; {:try_start_19 .. :try_end_19} :catch_19
 
     goto :goto_19
 
@@ -684,7 +684,7 @@
 
     invoke-interface {p0, v1}, Lio/flutter/embedding/engine/plugins/PluginRegistry;->add(Lio/flutter/embedding/engine/plugins/FlutterPlugin;)V
     :try_end_1a
-    .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_1a} :catch_1a
+    .catch Ljava/lang/Throwable; {:try_start_1a .. :try_end_1a} :catch_1a
 
     goto :goto_1a
 
