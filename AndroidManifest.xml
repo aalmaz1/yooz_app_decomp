@@ -11,12 +11,31 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <queries>
-        <intent><action android:name="android.intent.action.VIEW" /><category android:name="android.intent.category.BROWSABLE" /><data android:scheme="http" /></intent>
-        <intent><action android:name="android.intent.action.VIEW" /><category android:name="android.intent.category.BROWSABLE" /><data android:scheme="https" /></intent>
-        <intent><action android:name="android.intent.action.DIAL" /><data android:scheme="tel" /></intent>
-        <intent><action android:name="android.intent.action.SENDTO" /><data android:scheme="smsto" /></intent>
-        <intent><action android:name="android.intent.action.SEND" /><data android:mimeType="*/*" /></intent>
-        <intent><action android:name="android.support.customtabs.action.CustomTabsService" /></intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="http" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+            <data android:scheme="tel" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="smsto" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="*/*" />
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
     </queries>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
@@ -33,8 +52,8 @@
     <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
     <permission android:name="cn.yoozworld.watch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="0x2" />
     <uses-permission android:name="cn.yoozworld.watch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-    <application android:label="@ref/0x7f10001c" android:icon="@ref/0x7f080091" android:name="cn.yoozworld.watch.APP" android:allowBackup="false" android:extractNativeLibs="false" android:usesCleartextTraffic="false" android:networkSecurityConfig="@ref/0x7f130005" android:roundIcon="@ref/0x7f080091" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:requestLegacyExternalStorage="true" android:allowNativeHeapPointerTagging="false">
-        <activity android:theme="@ref/0x7f110009" android:label="@ref/0x7f10001c" android:name="cn.yoozworld.watch.ui.HomeActivity" android:exported="true" android:launchMode="2" android:screenOrientation="1" android:configChanges="0x40003ff4" android:windowSoftInputMode="0x10" android:hardwareAccelerated="true" android:requestLegacyExternalStorage="true">
+    <application android:label="YOOZ World" android:icon="@ref/0x7f080091" android:name="cn.yoozworld.watch.APP" android:allowBackup="false" android:extractNativeLibs="false" android:usesCleartextTraffic="false" android:roundIcon="@ref/0x7f080091" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:requestLegacyExternalStorage="true" android:allowNativeHeapPointerTagging="false">
+        <activity android:theme="@ref/0x7f110009" android:label="YOOZ World" android:name="cn.yoozworld.watch.ui.HomeActivity" android:exported="true" android:launchMode="2" android:screenOrientation="1" android:configChanges="0x40003ff4" android:windowSoftInputMode="0x10" android:hardwareAccelerated="true" android:requestLegacyExternalStorage="true">
             <meta-data android:name="io.flutter.embedding.android.NormalTheme" android:resource="@ref/0x7f1100f8" />
             <meta-data android:name="io.flutter.embedding.android.SplashScreenDrawable" android:resource="@ref/0x7f080092" />
             <intent-filter>
@@ -45,7 +64,7 @@
         <activity android:theme="@ref/0x7f110009" android:name="cn.yoozworld.watch.ui.WelActivity" android:exported="true" />
         <meta-data android:name="com.amap.api.v2.apikey" android:value="7ebbb274f3990cb80ff5e157f1082b49" />
         <service android:name="cn.baos.watch.sdk.bluetooth.reload.BleReloadService" android:exported="true" />
-        <activity android:theme="@ref/0x1030009" android:label="@ref/0x7f10001c" android:name="cn.yoozworld.watch.ui.LRActivity" android:exported="true" />
+        <activity android:theme="@ref/0x1030009" android:label="YOOZ World" android:name="cn.yoozworld.watch.ui.LRActivity" android:exported="true" />
         <receiver android:name="cn.yoozworld.watch.ui.TimeZoneReceiver" android:enabled="true" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.TIMEZONE_CHANGED" />
