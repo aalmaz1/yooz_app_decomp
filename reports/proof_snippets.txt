@@ -1,0 +1,22 @@
+### CctTransportBackend.send stub
+.method public send(Lcom/google/android/datatransport/runtime/backends/BackendRequest;)Lcom/google/android/datatransport/runtime/backends/BackendResponse;
+    .registers 4
+    const-wide/16 v0, 0x0
+    invoke-static {v0, v1}, Lcom/google/android/datatransport/runtime/backends/BackendResponse;->ok(J)Lcom/google/android/datatransport/runtime/backends/BackendResponse;
+    move-result-object v0
+    return-object v0
+.end method
+
+### FirebaseAnalytics.logEvent stub
+.method public final logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
+    .registers 3
+
+    return-void
+.end method
+
+### DeviceIdUtil.getDeviceId stub
+.method public static getDeviceId(Landroid/content/Context;)Ljava/lang/String;
+    .locals 1
+    const-string v0, "yooz_private_id"
+    return-object v0
+.end method
