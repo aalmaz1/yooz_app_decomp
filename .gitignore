@@ -1,13 +1,23 @@
+# Binaries
+*.apk
+*.dex
+*.keystore
+
+# Android Studio / IDE
+.idea/
+*.iml
+.gradle/
+
 # Build artifacts
 build/
 dist/
-*.apk
-*.idsig
-
-# Developer keys
-*.keystore
-*.jks
 
 # Logs and reports
-reports/baseline/
+*.txt
+*.log
 reports/after/
+reports/baseline/
+
+# Temporary files
+/original_decode/
+/recovery/

@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39786df3-2831-451d-a563-2355220e7ba5" name="Changes" comment="s">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/xml/dx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/xml/dx.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources.arsc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smali_classes2/cn/baos/watch/sdk/util/DeviceIdUtil.smali" beforeDir="false" afterPath="$PROJECT_DIR$/smali_classes2/cn/baos/watch/sdk/util/DeviceIdUtil.smali" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smali_classes2/cn/baos/watch/sdk/utils/DeviceIdUtil.smali" beforeDir="false" afterPath="$PROJECT_DIR$/smali_classes2/cn/baos/watch/sdk/utils/DeviceIdUtil.smali" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smali_classes2/cn/yoozworld/watch/ui/BLfLst.smali" beforeDir="false" afterPath="$PROJECT_DIR$/smali_classes2/cn/yoozworld/watch/ui/BLfLst.smali" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smali_classes2/cn/yoozworld/watch/ui/HomeActivity.smali" beforeDir="false" afterPath="$PROJECT_DIR$/smali_classes2/cn/yoozworld/watch/ui/HomeActivity.smali" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smali_classes2/com/amazonaws/amplify/amplify_analytics_pinpoint/AmplifyAnalyticsPinpointPlugin.smali" beforeDir="false" afterPath="$PROJECT_DIR$/smali_classes2/com/amazonaws/amplify/amplify_analytics_pinpoint/AmplifyAnalyticsPinpointPlugin.smali" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smali_classes2/com/amazonaws/amplify/amplify_auth_cognito/AmplifyAuthCognitoPlugin.smali" beforeDir="false" afterPath="$PROJECT_DIR$/smali_classes2/com/amazonaws/amplify/amplify_auth_cognito/AmplifyAuthCognitoPlugin.smali" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smali_classes2/com/google/android/datatransport/cct/CctTransportBackend.smali" beforeDir="false" afterPath="$PROJECT_DIR$/smali_classes2/com/google/android/datatransport/cct/CctTransportBackend.smali" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smali_classes3/io/flutter/plugins/GeneratedPluginRegistrant.smali" beforeDir="false" afterPath="$PROJECT_DIR$/smali_classes3/io/flutter/plugins/GeneratedPluginRegistrant.smali" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
