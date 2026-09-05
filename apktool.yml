@@ -1,10 +1,9 @@
 version: 3.0.3
-apkFileName: yooz_LITE_LEGEND_62MB.apk
+apkFileName: yooz_final_v3_private.apk
 sdkInfo:
   minSdkVersion: 29
 doNotCompress:
 - arsc
-- dex
 - gif
 - mp3
 - png

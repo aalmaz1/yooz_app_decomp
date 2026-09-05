@@ -10,7 +10,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "SumMet", "GeneralHealth", "Meteorological", "GPSBase", "SportPlans", "StoreAppConfig", "CommandRemind", "WorldTime", "BusinessCard", "Wallet"]
+  "support": ["Contact", "HourSystem", "SumMet", "GeneralHealth", "BloodPressure", "BloodSugar", "Meteorological", "GPSBase", "SportPlans", "StoreAppConfig", "CommandRemind", "WorldTime", "SportRecord", "BusinessCard", "Wallet"]
 }, {
   "name": "W629",
   "isOnlineMsl": false,
@@ -23,7 +23,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "SumMet", "GeneralHealth", "Meteorological", "GPSBase", "SportPlans", "StoreAppConfig", "CommandRemind", "WorldTime", "SportTrace", "BusinessCard", "Wallet"]
+  "support": ["Contact", "HourSystem", "SumMet", "GeneralHealth", "Meteorological", "GPSBase", "SportPlans", "StoreAppConfig", "CommandRemind", "WorldTime", "SportTrace", "SportRecord", "BusinessCard", "Wallet"]
 }, {
   "name": "W6110",
   "isOnlineMsl": false,
@@ -36,7 +36,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "SumMet", "GeneralHealth", "Temperature", "Meteorological", "GPSBase", "StoreAppConfig", "CommandRemind", "WorldTime", "BusinessCard", "Wallet"]
+  "support": ["Contact", "HourSystem", "SumMet", "GeneralHealth", "BloodPressure", "Temperature", "BloodSugar", "Meteorological", "GPSBase", "Muslim", "StoreAppConfig", "CommandRemind", "WorldTime", "SportRecord", "BusinessCard", "Wallet"]
 }, {
   "name": "W6116",
   "isOnlineMsl": false,
@@ -49,7 +49,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "SumMet", "GeneralHealth", "Meteorological", "GPSBase", "SportPlans", "StoreAppConfig", "CommandRemind", "WorldTime", "SportTrace", "BusinessCard", "Wallet"]
+  "support": ["Contact", "HourSystem", "SumMet", "GeneralHealth", "Meteorological", "GPSBase", "Muslim", "SportPlans", "StoreAppConfig", "CommandRemind", "WorldTime", "SportTrace", "SportRecord", "BusinessCard", "Wallet"]
 }, {
   "name": "W318",
   "isOnlineMsl": false,
@@ -62,7 +62,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 1,
-  "support": ["Contact", "HourSystem", "BusinessCard", "Wallet"]
+  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet"]
 }, {
   "name": "W6118",
   "isOnlineMsl": false,
@@ -75,11 +75,11 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 1,
-  "support": ["Contact", "HourSystem", "BusinessCard", "Wallet"]
+  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet"]
 }, {
   "name": "W6123",
-  "isOnlineMsl": false,
-  "isOnlineMslHijri": false,
+  "isOnlineMsl": true,
+  "isOnlineMslHijri": true,
   "blacklist": "xyzxx",
   "blacklistVersion": "1.0.82",
   "dial": {
@@ -88,7 +88,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "CommandRemind", "MuslimPraise", "TasbinCount"]
+  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount"]
 }, {
   "name": "W6117",
   "isOnlineMsl": false,
@@ -101,7 +101,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "CommandRemind", "MuslimPraise", "TasbinCount"]
+  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount"]
 }, {
   "name": "W6161",
   "isOnlineMsl": false,
@@ -114,7 +114,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "CommandRemind", "MuslimPraise", "TasbinCount"]
+  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount"]
 }, {
   "name": "W6139",
   "isOnlineMsl": false,
@@ -127,7 +127,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "CommandRemind", "MuslimPraise", "TasbinCount"]
+  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount"]
 }, {
   "name": "W6131",
   "isOnlineMsl": false,
@@ -140,7 +140,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 1,
-  "support": ["Contact", "HourSystem", "BusinessCard", "Wallet"]
+  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet"]
 }, {
   "name": "W6129",
   "isOnlineMsl": false,
@@ -153,7 +153,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "SumMet", "GeneralHealth", "Meteorological", "GPSBase", "SportPlans", "StoreAppConfig", "CommandRemind", "WorldTime", "SportTrace", "BusinessCard", "Wallet"]
+  "support": ["Contact", "HourSystem", "SumMet", "GeneralHealth", "Meteorological", "GPSBase", "Muslim", "SportPlans", "StoreAppConfig", "CommandRemind", "WorldTime", "SportTrace", "SportRecord", "BusinessCard", "Wallet"]
 }, {
   "name": "V6320",
   "dial": {
