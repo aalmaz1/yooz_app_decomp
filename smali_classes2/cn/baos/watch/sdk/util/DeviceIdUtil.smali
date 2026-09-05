@@ -185,35 +185,8 @@
 
 .method private static getIMEI(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
-
-    :try_start_0
-    const-string v0, "phone"
-
-    .line 185
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/telephony/TelephonyManager;
-
-    .line 186
-    invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    .line 188
-    invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
-
-    const-string p0, ""
-
-    return-object p0
+    const-string v0, "yooz_private_id"
+    return-object v0
 .end method
 
 .method private static getSerial()Ljava/lang/String;
@@ -236,85 +209,8 @@
 
 .method public static getUniqueID(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
-
-    .line 211
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object p0
-
-    const-string v0, "android_id"
-
-    invoke-static {p0, v0}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 212
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const-string v0, "9774d56d682e549c"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 213
-    sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/util/UUID;->nameUUIDFromBytes([B)Ljava/util/UUID;
-
-    move-result-object p0
-
-    .line 214
-    invoke-virtual {p0}, Ljava/util/UUID;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 217
-    :goto_0
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 218
-    invoke-static {}, Lcn/baos/watch/sdk/util/DeviceIdUtil;->getUUID()Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 221
-    :cond_1
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/util/UUID;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    :cond_2
-    return-object p0
+    const-string v0, "yooz_private_id"
+    return-object v0
 .end method
 
 .method public static hexToByte(Ljava/lang/String;)B
