@@ -9,11 +9,12 @@
 .gradle/
 
 # Build artifacts
-build/
+/build/
 dist/
 
 # Logs and reports
 *.txt
+!unknown/androidsupportmultidexversion.txt
 *.log
 reports/after/
 reports/baseline/

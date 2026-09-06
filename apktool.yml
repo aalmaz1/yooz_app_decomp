@@ -1,7 +1,8 @@
 version: 3.0.3
 apkFileName: yooz_final_v3_private.apk
 sdkInfo:
-  minSdkVersion: 29
+  minSdkVersion: 28
+  targetSdkVersion: 34
 doNotCompress:
 - arsc
 - gif

@@ -5,42 +5,37 @@ This repository contains the standalone source code of the modified Yoozworld An
 ## 🛠️ Key Technical Fixes
 
 ### 1. Boot-time Stability (The "Black Screen" Fix)
-*   **DEX Verifier Repair**: Resolved a `java.lang.VerifyError` in `AmplifyAuthCognitoPlugin.smali`. The original code had a register assignment conflict in `getContextData()` when handling 64-bit `Long` values.
-*   **Fail-safe Plugin Registration**: Modified `GeneratedPluginRegistrant.smali` to use `Throwable` catch blocks. This prevents the entire application from crashing if a non-critical plugin fails to verify.
+*   **Cognito Data Mocking**: Replaced `getContextData()` in `AmplifyAuthCognitoPlugin.smali` with static fake values.
+*   **Fail-safe Plugin Registration**: Modified `GeneratedPluginRegistrant.smali` to use `Throwable` catch blocks.
 *   **Explicit Registration**: Added manual calls to `GeneratedPluginRegistrant.registerWith(engine)` in `HomeActivity` and `BLfLst` to ensure initialization.
-*   **Hang Prevention**: Disabled `LogcatThread` to prevent deadlocks from `Runtime.exec("logcat")`.
+*   **Hang Prevention**: Disabled `LogcatThread` by neutralising its methods to prevent deadlocks from `Runtime.exec("logcat")`.
 
 ### 2. Privacy Hardening (Telemetry Reduction)
-*   **ID Masking**: Extended `DeviceIdUtil` methods (`getDeviceId`, `getAndroidId`, `getUniqueID`, `getIMEI`) to return a static string: `yooz_private_id`.
+*   **ID Masking**: Extended `DeviceIdUtil`, `FirebaseInstallations`, and `AmplifyAnalyticsPinpointPlugin` to return a static string: `yooz_private_id`.
 *   **CCT "Blindfold"**: Patched `CctTransportBackend` to immediately return `null` in `doSend`, dropping telemetry packets.
-*   **Firebase Analytics Mitigation**: Core logging methods in `FirebaseAnalytics.smali` and GMS `zzdy.smali` are stubbed.
+*   **Analytics Mitigation**: Core logging methods in `FirebaseAnalytics.smali` and GMS `zzdy.smali` are stubbed.
+
+For a detailed list of all applied code modifications, see [PATCHES.md](PATCHES.md).
 
 ---
 
 ## 🏗️ How to Build
-This repository uses **Raw Resource Mapping** to ensure 100% build compatibility without needing external frameworks.
+Collected and signed locally.
 
-1.  **Clone the repository**.
-2.  **Build the APK** using Apktool:
+1.  **Build and Sign**:
     ```bash
-    apktool b . -o yooz_built.apk --copy-original
+    ./build.sh
     ```
-    *The `--copy-original` flag is mandatory to link the binary resources and original manifest signature metadata.*
-3.  **Align the APK** (4KB or 16KB):
-    ```bash
-    zipalign -v -p 16 yooz_built.apk yooz_aligned.apk
-    ```
-4.  **Sign the APK**:
-    ```bash
-    apksigner sign --ks your_key.keystore --out yooz_final_v3_private.apk yooz_aligned.apk
-    ```
+    *By default, it uses the debug keystore. Use `KEYSTORE=path/to/key.ks ./build.sh` for custom keys.*
 
 ## 📁 Repository Structure
 *   `smali/`, `smali_classes2-4/`: Fixed Smali source code.
-*   `res/`, `assets/`, `lib/`: Full application binaries and resources (raw).
+*   `unknown/res/`, `assets/`, `lib/`: Full application binaries and resources (raw).
 *   `AndroidManifest.xml`: Full manifest (binary format).
 
 ---
 
 ## ⚠️ Disclaimer
-This is a research project for educational purposes in the field of Android reverse engineering. All original intellectual property belongs to the respective owners.
+16 KB page size support is **NOT** achieved. `libJNIControl.so`, `libimage_processing_util_jni.so`, and `libsqlite3.so` have `p_align = 0x1000`. Re-linking these libraries is required for full compatibility.
+
+This is a research project for educational purposes. All original intellectual property belongs to the respective owners.
