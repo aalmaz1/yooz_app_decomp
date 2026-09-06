@@ -11,6 +11,9 @@
 # Build artifacts
 /build/
 dist/
+out.apk
+out-aligned.apk
+*.idsig
 
 # Logs and reports
 *.txt

@@ -28,6 +28,8 @@ Collected and signed locally.
     ```
     *By default, it uses the debug keystore. Use `KEYSTORE=path/to/key.ks ./build.sh` for custom keys.*
 
+black-screen fix НЕ подтверждён на устройстве; сборка проверена только на уровне apktool+sign.
+
 ## 📁 Repository Structure
 *   `smali/`, `smali_classes2-4/`: Fixed Smali source code.
 *   `unknown/res/`, `assets/`, `lib/`: Full application binaries and resources (raw).
@@ -36,6 +38,6 @@ Collected and signed locally.
 ---
 
 ## ⚠️ Disclaimer
-16 KB page size support is **NOT** achieved. `libJNIControl.so`, `libimage_processing_util_jni.so`, and `libsqlite3.so` have `p_align = 0x1000`. Re-linking these libraries is required for full compatibility.
+16 KB page size support is **NOT** supported for native libraries. `libJNIControl.so`, `libimage_processing_util_jni.so`, and `libsqlite3.so` have `p_align = 0x1000`. Re-linking these libraries is required for full compatibility.
 
 This is a research project for educational purposes. All original intellectual property belongs to the respective owners.
