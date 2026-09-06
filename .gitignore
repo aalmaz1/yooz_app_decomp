@@ -9,11 +9,15 @@
 .gradle/
 
 # Build artifacts
-build/
+/build/
 dist/
+out.apk
+out-aligned.apk
+*.idsig
 
 # Logs and reports
 *.txt
+!unknown/androidsupportmultidexversion.txt
 *.log
 reports/after/
 reports/baseline/
