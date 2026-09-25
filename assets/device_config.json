@@ -46,8 +46,8 @@
     "height": 296
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet"]
+  "albumNum": 6,
+  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet", "StoreAppConfig"]
 }, {
   "name": "W6118",
   "blacklist": "",
@@ -56,28 +56,28 @@
     "height": 284
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet"]
+  "albumNum": 6,
+  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet", "StoreAppConfig"]
 }, {
   "name": "W6123",
-  "blacklist": "Malaysia",
+  "blacklist": "",
   "dial": {
     "width": 320,
     "height": 385
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount"]
+  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount", "StoreAppConfig"]
 }, {
   "name": "W6139",
-  "blacklist": "中国,China,Egypt,Libya,Tunisia,Algeria,Morocco,Sudan,Mauritania,Pakistan,Bangladesh,Kashmir,Afghanistan,Indonesia,Malaysia,Brunei,Maldives,Kazakhstan,Uzbekistan,Turkmenistan,Tajikistan,Kyrgyzstan,Afar,Zanzibar,Kenya,Albania,Bosnia and Herzegovina,Kosovo,Turkey,Azerbaijan,Adjara",
+  "blacklist": "",
   "dial": {
     "width": 320,
     "height": 385
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount"]
+  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount", "StoreAppConfig"]
 }, {
   "name": "W6131",
   "blacklist": "",
@@ -86,8 +86,8 @@
     "height": 284
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet"]
+  "albumNum": 6,
+  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet", "StoreAppConfig"]
 }, {
   "name": "W6129",
   "blacklist": "",
@@ -105,8 +105,8 @@
     "height": 320
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["HourSystem"],
+  "albumNum": 6,
+  "support": ["HourSystem", "StoreAppConfig"],
   "noticeSupportVersion": "1.0.72",
   "themeConfig": {
     "width": 0.4,
@@ -123,8 +123,8 @@
     "height": 320
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["HourSystem"],
+  "albumNum": 6,
+  "support": ["HourSystem", "StoreAppConfig"],
   "noticeSupportVersion": 0,
   "themeConfig": {
     "width": 0.4,
@@ -141,8 +141,8 @@
     "height": 240
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["HourSystem"],
+  "albumNum": 6,
+  "support": ["HourSystem", "StoreAppConfig"],
   "noticeSupportVersion": 0,
   "themeConfig": {
     "width": 0.313,
@@ -150,6 +150,6 @@
     "bottom": 0.147,
     "isCenter": false,
     "left": 0.33,
-    "isShowOil": false
+    "isShowOil": true
   }
 }]

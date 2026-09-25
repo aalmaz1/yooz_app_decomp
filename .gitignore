@@ -3,10 +3,12 @@
 *.dex
 *.keystore
 
-# Android Studio / IDE
+# Android Studio / IDE & Agent
 .idea/
+.artifacts/
 *.iml
 .gradle/
+.DS_Store
 
 # Build artifacts
 /build/
@@ -14,10 +16,12 @@ dist/
 out.apk
 out-aligned.apk
 *.idsig
+*.apk.idsig
 
 # Logs and reports
 *.txt
 !unknown/androidsupportmultidexversion.txt
+!assets/reamark.txt
 *.log
 reports/after/
 reports/baseline/

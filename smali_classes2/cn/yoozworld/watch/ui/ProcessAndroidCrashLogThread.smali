@@ -293,6 +293,9 @@
 
     invoke-virtual {v1, v5}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    invoke-virtual {v4}, Ljava/io/File;->delete()Z
+
+
     .line 90
     :try_start_1
     sget-object v4, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;

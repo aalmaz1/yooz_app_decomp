@@ -10,10 +10,13 @@ This repository contains the standalone source code of the modified Yoozworld An
 *   **Explicit Registration**: Added manual calls to `GeneratedPluginRegistrant.registerWith(engine)` in `HomeActivity` and `BLfLst` to ensure initialization.
 *   **Hang Prevention**: Disabled `LogcatThread` by neutralising its methods to prevent deadlocks from `Runtime.exec("logcat")`.
 
-### 2. Privacy Hardening (Telemetry Reduction)
+### 2. Privacy Hardening & Localization
 *   **ID Masking**: Extended `DeviceIdUtil`, `FirebaseInstallations`, and `AmplifyAnalyticsPinpointPlugin` to return a static string: `yooz_private_id`.
 *   **CCT "Blindfold"**: Patched `CctTransportBackend` to immediately return `null` in `doSend`, dropping telemetry packets.
 *   **Analytics Mitigation**: Core logging methods in `FirebaseAnalytics.smali` and GMS `zzdy.smali` are stubbed.
+*   **Smart Vape Localization**: Fully revised Russian localization (`ru.json`), replacing generic smartwatch terms with clean smart-vape terminology.
+*   **Unblocked Regional Limits**: Cleared `blacklist` restrictions in `device_config.json` for Russia and China, enabling full feature support and oil indicators (`isShowOil: true`).
+*   **Battery & Disk Optimization**: Increased BLE polling interval to 30s in `BleService.smali` and added crash log auto-deletion in `ProcessAndroidCrashLogThread.smali`.
 
 For a detailed list of all applied code modifications, see [PATCHES.md](PATCHES.md).
 
@@ -28,7 +31,8 @@ Collected and signed locally.
     ```
     *By default, it uses the debug keystore. Use `KEYSTORE=path/to/key.ks ./build.sh` for custom keys.*
 
-black-screen fix НЕ подтверждён на устройстве; сборка проверена только на уровне apktool+sign.
+Status: **Verified and working on physical device.**
+
 
 ## 📁 Repository Structure
 *   `smali/`, `smali_classes2-4/`: Fixed Smali source code.

@@ -61,8 +61,8 @@
     "height": 296
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet"]
+  "albumNum": 6,
+  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet", "StoreAppConfig"]
 }, {
   "name": "W6118",
   "isOnlineMsl": false,
@@ -74,13 +74,13 @@
     "height": 284
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet"]
+  "albumNum": 6,
+  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet", "StoreAppConfig"]
 }, {
   "name": "W6123",
   "isOnlineMsl": true,
   "isOnlineMslHijri": true,
-  "blacklist": "xyzxx",
+  "blacklist": "",
   "blacklistVersion": "1.0.82",
   "dial": {
     "width": 320,
@@ -88,12 +88,12 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount"]
+  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount", "StoreAppConfig"]
 }, {
   "name": "W6117",
   "isOnlineMsl": false,
   "isOnlineMslHijri": false,
-  "blacklist": "Malaysia",
+  "blacklist": "",
   "blacklistVersion": "1.0.82",
   "dial": {
     "width": 320,
@@ -101,12 +101,12 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount"]
+  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount", "StoreAppConfig"]
 }, {
   "name": "W6161",
   "isOnlineMsl": false,
   "isOnlineMslHijri": false,
-  "blacklist": "Malaysia",
+  "blacklist": "",
   "blacklistVersion": "1.0.82",
   "dial": {
     "width": 320,
@@ -114,12 +114,12 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount"]
+  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount", "StoreAppConfig"]
 }, {
   "name": "W6139",
   "isOnlineMsl": false,
   "isOnlineMslHijri": false,
-  "blacklist": "中国,China,Russia,Egypt,Libya,Tunisia,Algeria,Morocco,Sudan,Mauritania,Pakistan,Bangladesh,Kashmir,Afghanistan,Indonesia,Malaysia,Brunei,Maldives,Kazakhstan,Uzbekistan,Turkmenistan,Tajikistan,Kyrgyzstan,Afar,Zanzibar,Kenya,Albania,Bosnia and Herzegovina,Kosovo,Turkey,Azerbaijan,Adjara",
+  "blacklist": "",
   "blacklistVersion": "1.0.4",
   "dial": {
     "width": 320,
@@ -127,7 +127,7 @@
   },
   "minimumVersion": "1.0.0",
   "albumNum": 6,
-  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount"]
+  "support": ["Contact", "HourSystem", "Meteorological", "GPSBase", "Muslim", "CommandRemind", "MuslimPraise", "TasbinCount", "StoreAppConfig"]
 }, {
   "name": "W6131",
   "isOnlineMsl": false,
@@ -139,8 +139,8 @@
     "height": 284
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet"]
+  "albumNum": 6,
+  "support": ["Contact", "HourSystem", "Muslim", "SportRecord", "BusinessCard", "Wallet", "StoreAppConfig"]
 }, {
   "name": "W6129",
   "isOnlineMsl": false,
@@ -161,8 +161,8 @@
     "height": 320
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["HourSystem"],
+  "albumNum": 6,
+  "support": ["HourSystem", "StoreAppConfig"],
   "noticeSupportVersion": "3.3.3",
   "noticeSupportHmVersion": "3.3.3",
   "sppVersion": "99.99.99",
@@ -181,8 +181,8 @@
     "height": 320
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["HourSystem"],
+  "albumNum": 6,
+  "support": ["HourSystem", "StoreAppConfig"],
   "noticeSupportVersion": "0",
   "noticeSupportHmVersion": "0",
   "themeConfig": {
@@ -200,8 +200,8 @@
     "height": 296
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["HourSystem"],
+  "albumNum": 6,
+  "support": ["HourSystem", "StoreAppConfig"],
   "noticeSupportVersion": "0.0.0",
   "noticeSupportHmVersion": "0.0.0",
   "themeConfig": {
@@ -219,8 +219,8 @@
     "height": 320
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["HourSystem"],
+  "albumNum": 6,
+  "support": ["HourSystem", "StoreAppConfig"],
   "noticeSupportVersion": "1.0.0",
   "noticeSupportHmVersion": "1.0.0",
   "themeConfig": {
@@ -238,8 +238,8 @@
     "height": 296
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["HourSystem"],
+  "albumNum": 6,
+  "support": ["HourSystem", "StoreAppConfig"],
   "noticeSupportVersion": "0.0.0",
   "noticeSupportHmVersion": "0.0.0",
   "themeConfig": {
@@ -257,8 +257,8 @@
     "height": 320
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["HourSystem"],
+  "albumNum": 6,
+  "support": ["HourSystem", "StoreAppConfig"],
   "noticeSupportVersion": 99999999,
   "noticeSupportHmVersion": 99999999,
   "themeConfig": {
@@ -267,7 +267,7 @@
     "bottom": 0.206,
     "isCenter": false,
     "left": 0.293,
-    "isShowOil": false
+    "isShowOil": true
   }
 }, {
   "name": "V6338",
@@ -276,8 +276,8 @@
     "height": 320
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["HourSystem"],
+  "albumNum": 6,
+  "support": ["HourSystem", "StoreAppConfig"],
   "noticeSupportVersion": "0.0.0",
   "noticeSupportHmVersion": "0.0.0",
   "themeConfig": {
@@ -286,7 +286,7 @@
     "bottom": 0.206,
     "isCenter": false,
     "left": 0.293,
-    "isShowOil": false
+    "isShowOil": true
   }
 }, {
   "name": "V6324",
@@ -295,8 +295,8 @@
     "height": 240
   },
   "minimumVersion": "1.0.0",
-  "albumNum": 1,
-  "support": ["HourSystem"],
+  "albumNum": 6,
+  "support": ["HourSystem", "StoreAppConfig"],
   "noticeSupportVersion": 999999,
   "noticeSupportHmVersion": 999999,
   "themeConfig": {
@@ -305,6 +305,6 @@
     "bottom": 0.147,
     "isCenter": false,
     "left": 0.33,
-    "isShowOil": false
+    "isShowOil": true
   }
 }]

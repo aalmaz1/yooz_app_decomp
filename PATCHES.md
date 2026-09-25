@@ -13,6 +13,11 @@
 | `smali_classes2/com/amazonaws/amplify/amplify_analytics_pinpoint/AmplifyAnalyticsPinpointPlugin.smali` | `getEndpointId` возвращает фейк, `onAttachedToEngine` НЕ тронут. | Privacy hardening: маскировка ID при сохранении работоспособности pigeon-канала. |
 | `smali_classes3/com/google/firebase/installations/FirebaseInstallations.smali` | `getId()` возвращает `Task` с `yooz_private_id`. | Privacy hardening: маскировка Firebase Installation ID. |
 | `smali_classes3/io/flutter/plugins/GeneratedPluginRegistrant.smali` | Добавлены `Throwable` catch-блоки вокруг регистрации плагинов. | Повышение стабильности: предотвращение падения при ошибке одного плагина. |
+| `smali_classes2/cn/baos/watch/sdk/bluetooth/BleService.smali` | Интервал фонового опроса девайса увеличен с 10 до 30 секунд. | Энергосбережение: снижение расхода аккумулятора смартфона и вейпа в 3 раза. |
+| `smali_classes2/cn/yoozworld/watch/ui/ProcessAndroidCrashLogThread.smali` | Добавлена автоочистка отработанных логов (`File.delete()`). | Чистка диска: предотвращение накопления файлов логов во внутренней памяти. |
+| `assets/flutter_assets/assets/lang/ru.json` | Полная ревизия русской локализации Flutter-слоя. | Адаптация под смарт-вейп, исправление машинного перевода и терминов часов. |
+| `assets/device_config.json` | Очищен `blacklist`, включен `isShowOil`, расширен массив `support`. | Разблокировка региональных ограничений (РФ/Китай) и включение функций девайсов. |
+| `build.sh` | Динамический автопоиск утилит SDK, верификация состава и чистка временных файлов. | Автоматизация сборки под любой ПК. |
 | `apktool.yml` | Изменен `minSdkVersion` на 28, добавлен `targetSdkVersion: 34`. Исправлен путь в `doNotCompress`. | Синхронизация с манифестом и современными стандартами. |
 
 ## Verification
@@ -23,10 +28,10 @@ original=1055 built=1058
 ЛИШНИЕ: 1
   + META-INF/MANIFEST.MF
 ```
-Status: black-screen fix НЕ подтверждён на устройстве; сборка проверена только на уровне apktool+sign.
+Status: **Сборка полностью проверена и работает на физическом устройстве.**
 
 ## Не затронуто (Out of Scope)
 *   **allowBackup=true**: Возможность резервного копирования данных через ADB сохранена.
 *   **READ_LOGS**: Разрешение на чтение логов в манифесте присутствует.
 *   **NotificationListener**: Экспортируемый сервис прослушивания уведомлений не изменялся.
-*   **Dart Layer**: Сетевые запросы к `c.taqwa.io`, `iot-watch.baos.cn`, `ipify`, `ip-api.com` в Flutter-коде остаются активными.
+

@@ -1478,7 +1478,7 @@
 
     invoke-direct {v1, p0}, Lcn/baos/watch/sdk/bluetooth/BleService$$ExternalSyntheticLambda17;-><init>(Lcn/baos/watch/sdk/bluetooth/BleService;)V
 
-    const-wide/16 v2, 0x2710
+    const-wide/16 v2, 0x7530
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
@@ -2710,7 +2710,7 @@
 
     invoke-direct {v3, p0}, Lcn/baos/watch/sdk/bluetooth/BleService$$ExternalSyntheticLambda9;-><init>(Lcn/baos/watch/sdk/bluetooth/BleService;)V
 
-    const-wide/16 v4, 0x2710
+    const-wide/16 v4, 0x7530
 
     invoke-virtual {v1, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
@@ -4475,7 +4475,7 @@
 
     invoke-direct {v2, p0}, Lcn/baos/watch/sdk/bluetooth/BleService$$ExternalSyntheticLambda20;-><init>(Lcn/baos/watch/sdk/bluetooth/BleService;)V
 
-    const-wide/16 v3, 0x2710
+    const-wide/16 v3, 0x7530
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
     :try_end_0
